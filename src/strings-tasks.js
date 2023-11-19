@@ -448,8 +448,10 @@ function getStringFromTemplate(firstName, lastName) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  const takeCommaIndex = value.indexOf(',');
+  const takeExclamPointIndex = value.indexOf('!');
+  return value.substring(takeCommaIndex + 2, takeExclamPointIndex);
 }
 
 /**
